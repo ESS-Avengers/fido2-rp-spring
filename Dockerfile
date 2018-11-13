@@ -1,6 +1,6 @@
 FROM gradle:4.2.1-jdk8-alpine as builder
-COPY --chown=gradle:gradle .
-WORKDIR .
+COPY --chown=gradle:gradle . /build
+WORKDIR /build
 RUN gradle build
 
 FROM ubuntu:latest
