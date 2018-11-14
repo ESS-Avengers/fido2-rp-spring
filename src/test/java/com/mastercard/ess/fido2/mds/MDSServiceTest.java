@@ -15,6 +15,7 @@ package com.mastercard.ess.fido2.mds;
 import com.mastercard.ess.fido2.Fido2Application;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Hex;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@ public class MDSServiceTest {
     MDSService mdsService;
 
     @Test
+    @Ignore
     public void testService() throws DecoderException {
 
         byte[] aaguid = Hex.decodeHex("215329d99af4432ab5fb3039289e0971");

@@ -17,6 +17,7 @@ import com.mastercard.ess.fido2.service.AuthData;
 import javax.net.ssl.TrustManager;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,9 @@ public class CertificationKeyStoreUtilsTest {
 
     }
 
+
     @Test
+    @Ignore
     public void happyPathTest() {
         AuthData authData = new AuthData();
         authData.setAaguid("91dfead7-959e-4475-ad26-9b0d482be089".getBytes());
