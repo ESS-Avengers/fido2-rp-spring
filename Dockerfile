@@ -6,5 +6,5 @@ RUN gradle build --stacktrace
 FROM ubuntu:latest
 FROM openjdk:8-jre-alpine
 EXPOSE 8080
-COPY --from=builder /build/libs/fido2.0-server.jar fido2.0-server-final.jar
+COPY --from=builder /fido2.0-server.jar fido2.0-server-final.jar
 ENTRYPOINT ["java","-jar","fido2.0-server-final.jar"]
