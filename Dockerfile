@@ -1,10 +1,6 @@
-FROM gradle:4.2.1-jdk8-alpine as builder
-COPY --chown=gradle:gradle . /build
-WORKDIR /build
-RUN gradle build --stacktrace
-
-FROM ubuntu:latest
 FROM openjdk:8-jre-alpine
-EXPOSE 8080
-COPY --from=builder /fido2.0-server.jar fido2.0-server-final.jar
+VOLUME /tmp
+ADD /ssl_cert/fido2-springboot.p12 ./ssl_cert/fido2-springboot.p12
+ARG JAR_FILE=/build/libs/fido2.0-server.jar
+COPY ${JAR_FILE} fido2.0-server-final.jar
 ENTRYPOINT ["java","-jar","fido2.0-server-final.jar"]
